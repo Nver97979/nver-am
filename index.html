@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nver.am | Premium Web Design & Development</title>
+  <meta name="description" content="Nver.am - Premium digital design, branding, and web development for modern businesses." />
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --bg-alt: #111623;
+      --surface: #1a1f2e;
+      --surface-2: #212936;
+      --primary: #00d4ff;
+      --primary-dark: #0099cc;
+      --secondary: #ff006e;
+      --accent: #ffd60a;
+      --text: #f5f5f5;
+      --text-muted: #a0a0a0;
+      --border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      --glow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 14, 26, 0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn-header {
+      background: linear-gradient(135deg, var(--primary), #00a8ff);
+      color: var(--bg);
+      padding: 12px 28px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: var(--glow);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 100px;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 30px;
+      letter-spacing: -1px;
+      font-weight: 900;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #00a8ff);
+      color: var(--bg);
+      box-shadow: var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .hero-image {
+      position: relative;
+      height: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-stats {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      background: rgba(26, 31, 46, 0.95);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 5px;
+    }
+
+    .stat-item span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 20px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, rgba(26, 31, 46, 0.8), rgba(33, 41, 54, 0.8));
+      border: 1px solid var(--border);
+      padding: 40px 30px;
+      border-radius: 15px;
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: var(--glow);
+    }
+
+    .service-card:hover::before {
+      left: 100%;
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      height: 350px;
+      cursor: pointer;
+      group: "portfolio";
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 0, 110, 0.2));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-overlay p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* About Section */
+    .about {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      position: relative;
+      height: 450px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg, rgba(26, 31, 46, 0.8), rgba(33, 41, 54, 0.8));
+      border: 1px solid var(--border);
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card p {
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .author-info span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      font-weight: 900;
+    }
+
+    .contact-item {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+      min-width: 30px;
+    }
+
+    .contact-item h4 {
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .contact-item p {
+      color: var(--text-muted);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(26, 31, 46, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 15px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--glow);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-stats {
+        position: static;
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 80px 0;
+        margin-top: 80px;
+      }
+
+      nav {
+        display: flex;
+        gap: 15px;
+        font-size: 0.9rem;
+      }
+
+      nav a {
+        display: none;
+      }
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">NVER.AM</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-header">Get Started</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Digital Design <span>& Development</span> That Works</h1>
+        <p>We create stunning, high-performance websites and digital experiences that help your business grow. From concept to launch, we've got you covered.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Start Your Project</button>
+          <button class="btn btn-secondary">View Our Work</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Modern workspace">
+        <div class="floating-stats">
+          <div class="stat-item">
+            <strong>250+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="stat-item">
+            <strong>98%</strong>
+            <span>Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <strong>5+</strong>
+            <span>Years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>We offer comprehensive digital solutions tailored to your business needs</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">🎨</div>
+          <h3>Web Design</h3>
+          <p>Beautiful, modern designs that capture your brand identity and engage your audience with stunning visuals.</p>
+        </div>
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">💻</div>
+          <h3>Web Development</h3>
+          <p>Fast, secure, and scalable websites built with cutting-edge technology and best practices.</p>
+        </div>
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">🎯</div>
+          <h3>Branding</h3>
+          <p>Complete brand identity solutions including logos, color schemes, and brand guidelines.</p>
+        </div>
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">📱</div>
+          <h3>Mobile First</h3>
+          <p>Responsive design that looks perfect on all devices, from phones to desktop computers.</p>
+        </div>
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">⚡</div>
+          <h3>Performance</h3>
+          <p>Lightning-fast loading times and optimized performance for better user experience.</p>
+        </div>
+        <div class="service-card scroll-reveal">
+          <div class="service-icon">🔒</div>
+          <h3>Security</h3>
+          <p>Enterprise-grade security features to protect your data and your customers' information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Projects</h2>
+        <p>Explore some of our latest and greatest work</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?auto=format&fit=crop&w=800&q=80" alt="Project 1">
+          <div class="portfolio-overlay">
+            <h3>E-Commerce Platform</h3>
+            <p>Modern online store with advanced features</p>
+          </div>
+        </div>
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Project 2">
+          <div class="portfolio-overlay">
+            <h3>Corporate Website</h3>
+            <p>Professional presence for enterprise</p>
+          </div>
+        </div>
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Project 3">
+          <div class="portfolio-overlay">
+            <h3>SaaS Dashboard</h3>
+            <p>Intuitive user interface design</p>
+          </div>
+        </div>
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1561832033-f1b4c5ff13c5?auto=format&fit=crop&w=800&q=80" alt="Project 4">
+          <div class="portfolio-overlay">
+            <h3>Mobile App Design</h3>
+            <p>User-centric mobile experience</p>
+          </div>
+        </div>
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Project 5">
+          <div class="portfolio-overlay">
+            <h3>Brand Identity</h3>
+            <p>Complete branding solution</p>
+          </div>
+        </div>
+        <div class="portfolio-item scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1522070090343-e617ce975f91?auto=format&fit=crop&w=800&q=80" alt="Project 6">
+          <div class="portfolio-overlay">
+            <h3>Digital Marketing</h3>
+            <p>Campaign design and strategy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h3>Why Choose Us?</h3>
+        <p>We're not just developers and designers—we're digital partners committed to your success. With over 5 years of experience, we've helped hundreds of businesses establish their online presence.</p>
+        <p>Our approach is collaborative, innovative, and results-driven. We listen to your needs, understand your goals, and deliver solutions that exceed expectations.</p>
+        <p>From startups to enterprises, we have the expertise to bring your vision to life.</p>
+        <button class="btn btn-primary" style="margin-top: 20px;">Learn More</button>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?auto=format&fit=crop&w=800&q=80" alt="About us">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Real feedback from real customers</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Nver.am transformed our online presence. The design is stunning, and the results speak for themselves. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Client 1">
+            </div>
+            <div class="author-info">
+              <strong>Sarah Johnson</strong>
+              <span>CEO, TechStart</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Professionalism at its finest. They understood our vision and delivered beyond expectations. Great team to work with!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client 2">
+            </div>
+            <div class="author-info">
+              <strong>Michael Chen</strong>
+              <span>Founder, Digital Agency</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The attention to detail is incredible. Our new website has increased conversions by 40%. Simply amazing work!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Client 3">
+            </div>
+            <div class="author-info">
+              <strong>Emma Davis</strong>
+              <span>Marketing Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@nver.am</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <h4>Phone</h4>
+            <p>+374 (0) 94 223 223</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Yerevan, Armenia</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div>
+            <h4>Social</h4>
+            <p>Instagram | Twitter | LinkedIn</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Nver.am. All rights reserved. | Crafted with ❤️ in Armenia</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+
+    // Form handling
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
