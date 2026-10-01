@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nver.am | Premium Web Design & Development</title>
-  <meta name="description" content="Nver.am - Premium digital design, branding, and web development for modern businesses." />
+  <title>Nver.am | Վեբ դիզայն և զարգացման ծառայություններ</title>
+  <meta name="description" content="Nver.am - Մոդեռն վեբ դիզայն, բրենդինգ և վեբ զարգացման ծառայություններ" />
   <style>
     :root {
       --bg: #0a0e1a;
@@ -46,7 +46,6 @@
       padding: 0 20px;
     }
 
-    /* Header & Navigation */
     header {
       position: fixed;
       top: 0;
@@ -88,9 +87,7 @@
       position: relative;
     }
 
-    nav a:hover {
-      color: var(--primary);
-    }
+    nav a:hover { color: var(--primary); }
 
     nav a::after {
       content: '';
@@ -103,9 +100,7 @@
       transition: width 0.3s ease;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after { width: 100%; }
 
     .btn-header {
       background: linear-gradient(135deg, var(--primary), #00a8ff);
@@ -125,12 +120,9 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
+      nav { display: none; }
     }
 
-    /* Hero Section */
     .hero {
       margin-top: 100px;
       padding: 120px 0;
@@ -281,7 +273,6 @@
       font-size: 0.85rem;
     }
 
-    /* Services Section */
     .services {
       padding: 120px 0;
       border-top: 1px solid var(--border);
@@ -339,9 +330,7 @@
       box-shadow: var(--glow);
     }
 
-    .service-card:hover::before {
-      left: 100%;
-    }
+    .service-card:hover::before { left: 100%; }
 
     .service-icon {
       font-size: 3rem;
@@ -359,7 +348,6 @@
       line-height: 1.7;
     }
 
-    /* Portfolio Section */
     .portfolio {
       padding: 120px 0;
       border-top: 1px solid var(--border);
@@ -377,7 +365,6 @@
       border-radius: 15px;
       height: 350px;
       cursor: pointer;
-      group: "portfolio";
     }
 
     .portfolio-item img {
@@ -387,9 +374,7 @@
       transition: transform 0.5s ease;
     }
 
-    .portfolio-item:hover img {
-      transform: scale(1.1);
-    }
+    .portfolio-item:hover img { transform: scale(1.1); }
 
     .portfolio-overlay {
       position: absolute;
@@ -406,9 +391,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
     .portfolio-overlay h3 {
       font-size: 1.5rem;
@@ -420,7 +403,6 @@
       font-size: 0.9rem;
     }
 
-    /* About Section */
     .about {
       padding: 120px 0;
       border-top: 1px solid var(--border);
@@ -460,7 +442,6 @@
       object-fit: cover;
     }
 
-    /* Testimonials */
     .testimonials {
       padding: 120px 0;
       border-top: 1px solid var(--border);
@@ -522,7 +503,6 @@
       font-size: 0.85rem;
     }
 
-    /* Contact Section */
     .contact {
       padding: 120px 0;
       border-top: 1px solid var(--border);
@@ -600,7 +580,6 @@
       min-height: 150px;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       padding: 40px 0;
@@ -608,7 +587,6 @@
       color: var(--text-muted);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .hero-content,
       .about-grid,
@@ -626,15 +604,8 @@
         margin-top: 80px;
       }
 
-      nav {
-        display: flex;
-        gap: 15px;
-        font-size: 0.9rem;
-      }
-
-      nav a {
-        display: none;
-      }
+      nav { display: flex; gap: 15px; font-size: 0.9rem; }
+      nav a { display: none; }
     }
 
     .scroll-reveal {
@@ -650,31 +621,28 @@
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <div class="container header-content">
       <div class="logo">NVER.AM</div>
       <nav>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#contact">Contact</a>
-        <button class="btn-header">Get Started</button>
+        <a href="#services">Ծառայություններ</a>
+        <a href="#portfolio">Աշխատանքներ</a>
+        <a href="#about">Մեր մասին</a>
+        <a href="#testimonials">Կարծիքներ</a>
+        <a href="#contact">Կոնտակտ</a>
+        <button class="btn-header">Սկսել</button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1>Digital Design <span>& Development</span> That Works</h1>
-        <p>We create stunning, high-performance websites and digital experiences that help your business grow. From concept to launch, we've got you covered.</p>
+        <h1>Վեբ դիզայն <span>& զարգացում</span>, որը աշխատում է</h1>
+        <p>Մենք ստեղծում ենք ստանդարտից դուրս կայքեր և թվային լուծումներ, որոնք օգնում են ձեր բիզնեսին աճել, ավելի ուժեղ ներկայություն ունենալ համացանցում և գրավել հաճախորդներին:</p>
         <div class="hero-buttons">
-          <button class="btn btn-primary">Start Your Project</button>
-          <button class="btn btn-secondary">View Our Work</button>
+          <button class="btn btn-primary">Սկսել նախագիծը</button>
+          <button class="btn btn-secondary">Տեսնել աշխատանքները</button>
         </div>
       </div>
       <div class="hero-image">
@@ -682,126 +650,123 @@
         <div class="floating-stats">
           <div class="stat-item">
             <strong>250+</strong>
-            <span>Projects</span>
+            <span>Պրոյեկտ</span>
           </div>
           <div class="stat-item">
             <strong>98%</strong>
-            <span>Satisfaction</span>
+            <span>Հաճախորդների գոհունակություն</span>
           </div>
           <div class="stat-item">
             <strong>5+</strong>
-            <span>Years</span>
+            <span>Տարի փորձ</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
       <div class="section-header">
-        <h2>Our Services</h2>
-        <p>We offer comprehensive digital solutions tailored to your business needs</p>
+        <h2>Մեր ծառայությունները</h2>
+        <p>Մենք առաջարկում ենք բիզնեսի կարիքներին համապատասխան թվային լուծումներ</p>
       </div>
       <div class="services-grid">
         <div class="service-card scroll-reveal">
           <div class="service-icon">🎨</div>
-          <h3>Web Design</h3>
-          <p>Beautiful, modern designs that capture your brand identity and engage your audience with stunning visuals.</p>
+          <h3>Վեբ դիզայն</h3>
+          <p>Գեղեցիկ և ժամանակակից դիզայն, որը կարտացոլի ձեր բրենդը և կգրավի ձեր լսարանը:</p>
         </div>
         <div class="service-card scroll-reveal">
           <div class="service-icon">💻</div>
-          <h3>Web Development</h3>
-          <p>Fast, secure, and scalable websites built with cutting-edge technology and best practices.</p>
+          <h3>Վեբ զարգացում</h3>
+          <p>Արագ, անվտանգ և մասշտաբируем կայքեր՝ օգտագործելով նորագույն տեխնոլոգիաներ:</p>
         </div>
         <div class="service-card scroll-reveal">
           <div class="service-icon">🎯</div>
-          <h3>Branding</h3>
-          <p>Complete brand identity solutions including logos, color schemes, and brand guidelines.</p>
+          <h3>Բրենդինգ</h3>
+          <p>Բրենդի ամբողջական մշակում՝ լոգոտիպ, գույներ, ոճ, հաղորդակցություն:</p>
         </div>
         <div class="service-card scroll-reveal">
           <div class="service-icon">📱</div>
           <h3>Mobile First</h3>
-          <p>Responsive design that looks perfect on all devices, from phones to desktop computers.</p>
+          <p>Աջարկում ենք հարմարեցված դիզայն բոլոր սարքերի համար՝ հեռախոսից մինչև պլանշետ:</p>
         </div>
         <div class="service-card scroll-reveal">
           <div class="service-icon">⚡</div>
-          <h3>Performance</h3>
-          <p>Lightning-fast loading times and optimized performance for better user experience.</p>
+          <h3>Արդյունավետություն</h3>
+          <p>Արագ բեռնվածություն, օպտիմիզացված կատարում և ավելի լավ օգտատերերի փորձ:</p>
         </div>
         <div class="service-card scroll-reveal">
           <div class="service-icon">🔒</div>
-          <h3>Security</h3>
-          <p>Enterprise-grade security features to protect your data and your customers' information.</p>
+          <h3>Անվտանգություն</h3>
+          <p>Անվտանգության բարձր մակարդակ՝ ձեր տվյալների և հաճախորդների վստահության համար:</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
     <div class="container">
       <div class="section-header">
-        <h2>Recent Projects</h2>
-        <p>Explore some of our latest and greatest work</p>
+        <h2>Վերջին աշխատանքները</h2>
+        <p>Տեսեք մեզ մոտեցումը և կատարած նախագծերը</p>
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?auto=format&fit=crop&w=800&q=80" alt="Project 1">
           <div class="portfolio-overlay">
-            <h3>E-Commerce Platform</h3>
-            <p>Modern online store with advanced features</p>
+            <h3>Առցանց խանութ</h3>
+            <p>Ժամանակակից առևտրային հարթակ</p>
           </div>
         </div>
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Project 2">
           <div class="portfolio-overlay">
-            <h3>Corporate Website</h3>
-            <p>Professional presence for enterprise</p>
+            <h3>Կորպորատիվ կայք</h3>
+            <p>Պրոֆեսիոնալ առկայություն բիզնեսի համար</p>
           </div>
         </div>
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Project 3">
           <div class="portfolio-overlay">
-            <h3>SaaS Dashboard</h3>
-            <p>Intuitive user interface design</p>
+            <h3>SaaS վահանակ</h3>
+            <p>Հարմար օգտագործման ինտերֆեյս</p>
           </div>
         </div>
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1561832033-f1b4c5ff13c5?auto=format&fit=crop&w=800&q=80" alt="Project 4">
           <div class="portfolio-overlay">
             <h3>Mobile App Design</h3>
-            <p>User-centric mobile experience</p>
+            <p>Օգտատերակենտրոն հարթակ</p>
           </div>
         </div>
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Project 5">
           <div class="portfolio-overlay">
-            <h3>Brand Identity</h3>
-            <p>Complete branding solution</p>
+            <h3>Բրենդինգ</h3>
+            <p>Ամբողջական ապրանքանիշի մշակում</p>
           </div>
         </div>
         <div class="portfolio-item scroll-reveal">
           <img src="https://images.unsplash.com/photo-1522070090343-e617ce975f91?auto=format&fit=crop&w=800&q=80" alt="Project 6">
           <div class="portfolio-overlay">
-            <h3>Digital Marketing</h3>
-            <p>Campaign design and strategy</p>
+            <h3>Թվային մարքեթինգ</h3>
+            <p>Կամպանիայի ձևավորում և ռազմավարություն</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="about">
     <div class="container about-grid">
       <div class="about-text">
-        <h3>Why Choose Us?</h3>
-        <p>We're not just developers and designers—we're digital partners committed to your success. With over 5 years of experience, we've helped hundreds of businesses establish their online presence.</p>
-        <p>Our approach is collaborative, innovative, and results-driven. We listen to your needs, understand your goals, and deliver solutions that exceed expectations.</p>
-        <p>From startups to enterprises, we have the expertise to bring your vision to life.</p>
-        <button class="btn btn-primary" style="margin-top: 20px;">Learn More</button>
+        <h3>Ինչու ընտրել մեզ?</h3>
+        <p>Մենք ոչ միայն դիզայներներ և ծրագրավորողներ ենք, այլև ձեր բիզնեսի թվային գործընկերները։ 5+ տարվա փորձի շնորհիվ օգնել ենք հազարավոր բիզնեսների ստեղծել իրենց առցանց ներկայությունը:</p>
+        <p>Մեր մոտեցումը համագործակցային է, նորարարական և արդյունքահեշտ։ Մենք լսում ենք ձեր կարիքները, հասկանում ձեր նպատակները և պատրաստում ենք լուծումներ, որոնք գերազանցում են սպասումները:</p>
+        <p>Սկսնակներից մինչև մեծ ընկերություններ, մենք ունենք нужան փորձը, որպեսզի կյանք կոչենք ձեր գաղափարը:</p>
+        <button class="btn btn-primary" style="margin-top: 20px;">Սովորել ավելին</button>
       </div>
       <div class="about-image">
         <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?auto=format&fit=crop&w=800&q=80" alt="About us">
@@ -809,52 +774,51 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <div class="container">
       <div class="section-header">
-        <h2>What Our Clients Say</h2>
-        <p>Real feedback from real customers</p>
+        <h2>Կարծիքներ հաճախորդներից</h2>
+        <p>Իրական արձագանքներ իրական հաճախորդներից</p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card scroll-reveal">
           <div class="stars">★★★★★</div>
-          <p>"Nver.am transformed our online presence. The design is stunning, and the results speak for themselves. Highly recommended!"</p>
+          <p>«Nver.am-ը փոխակերպեց մեր առցանց ներկայությունը։ Դիզայնը հիասքանչ է, իսկ արդյունքները խոսում են ինքնուրույն։ Խորհուրդ կտայի բոլորին»</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Client 1">
             </div>
             <div class="author-info">
-              <strong>Sarah Johnson</strong>
-              <span>CEO, TechStart</span>
+              <strong>Էնգին Մ.</strong>
+              <span>Ամբիոն, TechStart</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card scroll-reveal">
           <div class="stars">★★★★★</div>
-          <p>"Professionalism at its finest. They understood our vision and delivered beyond expectations. Great team to work with!"</p>
+          <p>«Պրոֆեսիոնալիզմի բարձր մակարդակ։ Նրանք հասկացել են մեր տեսլականը և տվել են ավելին, քան սպասել էինք։ Շատ լավ թիմ»</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client 2">
             </div>
             <div class="author-info">
-              <strong>Michael Chen</strong>
-              <span>Founder, Digital Agency</span>
+              <strong>Միքայել Չ.</strong>
+              <span>Հիմնադիր, Digital Agency</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card scroll-reveal">
           <div class="stars">★★★★★</div>
-          <p>"The attention to detail is incredible. Our new website has increased conversions by 40%. Simply amazing work!"</p>
+          <p>«Մանրամասների նկատմամբ ուշադրությունը հիանալի է։ Մեր նոր կայքը մեծացրել է փոխակերպումները 40%-ով։ Լիովին հիասքանչ աշխատանք»</p>
           <div class="testimonial-author">
             <div class="author-avatar">
               <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Client 3">
             </div>
             <div class="author-info">
-              <strong>Emma Davis</strong>
-              <span>Marketing Director</span>
+              <strong>Էմմա Դ.</strong>
+              <span>Մարքեթինգային տնօրեն</span>
             </div>
           </div>
         </div>
@@ -862,36 +826,35 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container contact-grid">
       <div class="contact-info">
-        <h3>Get In Touch</h3>
+        <h3>Կապ հաստատեք մեզ հետ</h3>
         <div class="contact-item">
           <div class="contact-icon">📧</div>
           <div>
-            <h4>Email</h4>
+            <h4>Էլ. հասցե</h4>
             <p>hello@nver.am</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📱</div>
           <div>
-            <h4>Phone</h4>
+            <h4>Հեռախոս</h4>
             <p>+374 (0) 94 223 223</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div>
-            <h4>Location</h4>
-            <p>Yerevan, Armenia</p>
+            <h4>Տեղակայություն</h4>
+            <p>Երևան, Հայաստան</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🔗</div>
           <div>
-            <h4>Social</h4>
+            <h4>Սոցիալական</h4>
             <p>Instagram | Twitter | LinkedIn</p>
           </div>
         </div>
@@ -899,31 +862,29 @@
 
       <form class="contact-form">
         <div class="form-group">
-          <label for="name">Full Name</label>
+          <label for="name">Անուն</label>
           <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email">Էլ. հասցե</label>
           <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
+          <label for="message">Հաղորդագրություն</label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-primary">Ուղարկել</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2024 Nver.am. All rights reserved. | Crafted with ❤️ in Armenia</p>
+      <p>&copy; 2024 Nver.am. Բոլոր իրավունքները պաշտպանված են։ | Ստեղծված ❤️-ով Հայաստանում</p>
     </div>
   </footer>
 
   <script>
-    // Scroll reveal animation
     const reveals = document.querySelectorAll('.scroll-reveal');
 
     const observer = new IntersectionObserver((entries) => {
@@ -940,12 +901,11 @@
       observer.observe(reveal);
     });
 
-    // Form handling
     const form = document.querySelector('.contact-form');
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
+        alert('Շնորհակալություն! Ձեր հաղորդագրությունը հաջողությամբ ուղարկվեց։');
         form.reset();
       });
     }
