@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Nver.am</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .admin-shell {
+      max-width: 1000px;
+      margin: 120px auto 80px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(26, 31, 46, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .auth-box, .editor-box {
+      display: none;
+    }
+
+    .auth-box.active, .editor-box.active {
+      display: block;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font: inherit;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .status {
+      margin-top: 12px;
+      color: var(--primary);
+      min-height: 20px;
+    }
+
+    .logout {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <div id="loginBox" class="auth-box active">
+      <h2>Admin Login</h2>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" type="text" value="admin" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" value="admin123" />
+      </div>
+      <button class="btn btn-primary" id="loginBtn">Login</button>
+      <div class="status" id="loginStatus"></div>
+    </div>
+
+    <div id="editorBox" class="editor-box">
+      <div class="topbar">
+        <h2>Site Manager</h2>
+        <button class="logout" id="logoutBtn">Logout</button>
+      </div>
+
+      <form id="siteForm">
+        <div class="field-grid">
+          <div class="field">
+            <label>Site name</label>
+            <input name="siteName" />
+          </div>
+          <div class="field">
+            <label>Hero title</label>
+            <input name="heroTitle" />
+          </div>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>Hero subtitle</label>
+            <textarea name="heroSubtitle"></textarea>
+          </div>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>Hero image URL</label>
+            <input name="heroImage" />
+          </div>
+        </div>
+
+        <h3>Contact</h3>
+        <div class="field-grid">
+          <div class="field">
+            <label>Email</label>
+            <input name="contact.email" />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input name="contact.phone" />
+          </div>
+          <div class="field">
+            <label>Location</label>
+            <input name="contact.location" />
+          </div>
+          <div class="field">
+            <label>Socials</label>
+            <input name="contact.socials" />
+          </div>
+        </div>
+
+        <h3>About</h3>
+        <div class="field-grid">
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>About title</label>
+            <input name="aboutTitle" />
+          </div>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>About text</label>
+            <textarea name="aboutText"></textarea>
+          </div>
+        </div>
+
+        <h3>Footer</h3>
+        <div class="field-grid">
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>Footer text</label>
+            <input name="footerText" />
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Save changes</button>
+        <div class="status" id="saveStatus"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

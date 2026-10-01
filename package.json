@@ -1,0 +1,21 @@
+{
+  "name": "nver-am-admin-site",
+  "version": "1.0.0",
+  "description": "Nver.am full-stack website with admin panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "website",
+    "admin",
+    "express"
+  ],
+  "author": "Nver",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2"
+  }
+}

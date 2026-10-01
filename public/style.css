@@ -1,0 +1,81 @@
+const siteName = document.getElementById('siteName');
+const heroTitle = document.getElementById('heroTitle');
+const heroSubtitle = document.getElementById('heroSubtitle');
+const heroImage = document.getElementById('heroImage');
+const servicesGrid = document.getElementById('servicesGrid');
+const portfolioGrid = document.getElementById('portfolioGrid');
+const testimonialsGrid = document.getElementById('testimonialsGrid');
+const aboutTitle = document.getElementById('aboutTitle');
+const aboutText = document.getElementById('aboutText');
+const contactEmail = document.getElementById('contactEmail');
+const contactPhone = document.getElementById('contactPhone');
+const contactLocation = document.getElementById('contactLocation');
+const contactSocials = document.getElementById('contactSocials');
+const footerText = document.getElementById('footerText');
+
+function renderServices(services) {
+  servicesGrid.innerHTML = services.map(service => `
+    <div class="service-card scroll-reveal">
+      <div class="service-icon">${service.icon || '✦'}</div>
+      <h3>${service.title}</h3>
+      <p>${service.text}</p>
+    </div>
+  `).join('');
+}
+
+function renderPortfolio(items) {
+  portfolioGrid.innerHTML = items.map(item => `
+    <div class="portfolio-item scroll-reveal">
+      <img src="${item.image}" alt="${item.title}" />
+      <div class="portfolio-overlay">
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderTestimonials(items) {
+  testimonialsGrid.innerHTML = items.map(item => `
+    <div class="testimonial-card scroll-reveal">
+      <div class="stars">★★★★★</div>
+      <p>"${item.text}"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">
+          <img src="${item.avatar}" alt="${item.name}" />
+        </div>
+        <div class="author-info">
+          <strong>${item.name}</strong>
+          <span>${item.role}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function loadSite() {
+  const response = await fetch('/api/site');
+  const site = await response.json();
+
+  siteName.textContent = site.siteName || 'NVER.AM';
+  heroTitle.innerHTML = site.heroTitle || 'Վեբ դիզայն և զարգացում, որը աշխատում է';
+  heroSubtitle.textContent = site.heroSubtitle || '...';
+  heroImage.src = site.heroImage || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';
+  aboutTitle.textContent = site.aboutTitle || 'Ինչու ընտրել մեզ?';
+  aboutText.textContent = site.aboutText || '...';
+  contactEmail.textContent = site.contact?.email || 'hello@nver.am';
+  contactPhone.textContent = site.contact?.phone || '+374 (0) 94 223 223';
+  contactLocation.textContent = site.contact?.location || 'Երևան, Հայաստան';
+  contactSocials.textContent = site.contact?.socials || 'Instagram | Twitter | LinkedIn';
+  footerText.textContent = site.footerText || '© 2024 Nver.am. Բոլոր իրավունքները պաշտպանված են։ | Ստեղծված ❤️-ով Հայաստանում';
+
+  renderServices(site.services || []);
+  renderPortfolio(site.portfolio || []);
+  renderTestimonials(site.testimonials || []);
+
+  setTimeout(() => {
+    document.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('visible'));
+  }, 80);
+}
+
+window.addEventListener('DOMContentLoaded', loadSite);
